@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from "next/image";
+import Link from 'next/link';
 import { Leaf, Mail, Phone, MapPin, Twitter, Linkedin, Instagram } from 'lucide-react';
 
 const Footer = () => {
@@ -42,11 +43,43 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              <li><a href="/" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="/how-it-works" className="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
-              <li><a href="/technology" className="text-gray-400 hover:text-white transition-colors">Technology</a></li>
-              <li><a href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="/buy-credits" className="text-gray-400 hover:text-white transition-colors">Buy Credits</a></li>
+ <li>
+    <Link href="/" className="text-gray-400 hover:text-white transition-colors">
+      Home
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="/how-it-works"
+      className="text-gray-400 hover:text-white transition-colors"
+    >
+      How It Works
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="/technology"
+      className="text-gray-400 hover:text-white transition-colors"
+    >
+      Technology
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="/about"
+      className="text-gray-400 hover:text-white transition-colors"
+    >
+      About Us
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="/buy-credits"
+      className="text-gray-400 hover:text-white transition-colors"
+    >
+      Buy Credits
+    </Link>
+  </li>
             </ul>
           </div>
           

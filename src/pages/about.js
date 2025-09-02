@@ -111,7 +111,7 @@ export default function About() {
     {/* Header */}
     <div className="text-center mb-12">
       <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black font-merriweather mb-4">
-        Let's Connect
+        Lett&apos;s Connect
       </h2>
       <p className="text-xl md:text-2xl text-[#808080] font-merriweather mb-8">
         Start a conversation with us today.

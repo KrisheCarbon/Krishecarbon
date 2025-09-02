@@ -92,7 +92,7 @@ export default function Impact() {
           <div className="flex items-center justify-center h-full">
             <p className="text-base sm:text-lg md:text-xl font-merriweather leading-relaxed text-center">
               With smart kilns, AI + satellite-based verification, and direct farmer income, 
-              we're building a new climate economy from the soil up.
+              wet&apos;re building a new climate economy from the soil up.
             </p>
           </div>
         </div>
