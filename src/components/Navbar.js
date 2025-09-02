@@ -6,13 +6,15 @@ export default function Navbar() {
     <nav className="w-full bg-white px-6 md:px-12 py-4 flex items-center justify-between shadow-sm">
     {/* Left: Logo */}
     <div className="flex items-center gap-2">
-      <Image
-        src="/kriSHE_logo.svg"
-        alt="KriSHE Carbon Logo"
-        href="/"
-        width={100}
-        height={100}
-      />
+      <Link href="/" passHref>
+          <Image
+            src="/kriSHE_logo.svg"
+            alt="KriSHE Carbon Logo"
+            width={100}
+            height={100}
+            className="cursor-pointer"
+          />
+      </Link>
     </div>
   
     {/* Right: Nav Links + Get Started */}

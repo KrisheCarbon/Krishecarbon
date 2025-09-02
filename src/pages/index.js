@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 import TestimonialSection from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { BrainCircuit,ShieldCheck,Leaf, ArrowRight, Play, Sparkles,Smartphone,Users, Zap, Satellite, DollarSign,TrendingUp, Shield, Building2 } from "lucide-react";
 
 
@@ -20,7 +21,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <Navbar />
 
-           <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-12">
+           <section className="relative min-h-screen flex items-start justify-center overflow-hidden pt-12 pb-10">
                     {/* Background with animated gradient */}
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50">
                       <div className="absolute inset-0 bg-gradient-to-br from-emerald-600/5 via-transparent to-green-600/5"></div>
@@ -163,10 +164,12 @@ export default function Home() {
                             whileTap={{ scale: 0.95 }}
                             className="group relative bg-white/90 backdrop-blur-sm border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
                           >
+                            <Link href="/buy-credits">
                             <span className="flex items-center gap-3">
                               <Play className="w-5 h-5" />
                               Buy Verified Credits
                             </span>
+                            </Link>
                           </motion.button>
                         </motion.div>
                       </div>
@@ -344,10 +347,13 @@ export default function Home() {
     {/* Callout + Button */}
     <div className="text-center">
 
-      <button className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 inline-flex items-center gap-3 shadow-lg hover:shadow-xl">
-        See how it works
-        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-      </button>
+<Link
+    href="/how-it-works"
+    className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 inline-flex items-center gap-3 shadow-lg hover:shadow-xl"
+  >
+    See how it works
+    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+</Link>
     </div>
   </div>
 </section>
@@ -606,6 +612,7 @@ export default function Home() {
         </ul>
 
         {/* CTA Button */}
+        <Link href='/buy-credits'>
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -616,6 +623,7 @@ export default function Home() {
           Buy Credits
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </motion.button>
+        </Link>
       </motion.div>
     </div>
 

@@ -52,10 +52,12 @@ export default function HowItWorks() {
               whileTap={{ scale: 0.95 }}
               className="group relative bg-white/80 backdrop-blur-sm border-2 border-emerald-600 text-emerald-700 hover:bg-emerald-600 hover:text-white px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-md hover:shadow-lg"
             >
+              <Link href='/technology'>
               <span className="flex items-center gap-3">
                 <Cpu className="w-5 h-5" />
                 Explore the Technology
               </span>
+              </Link>
             </motion.button>
           </Link>
         </motion.div>
@@ -188,9 +190,11 @@ export default function HowItWorks() {
 
     {/* CTA Button */}
     <div className="text-center">
+      <Link href='/technology'>
       <button className="group bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 inline-flex items-center gap-3 shadow-lg hover:shadow-xl">
         Learn About Our Technology
       </button>
+      </Link>
     </div>
   </div>
 </section>
@@ -486,7 +490,7 @@ export default function HowItWorks() {
           <p className="mb-6 opacity-90">
             Purchase high-quality, traceable biochar credits with multi-layer MRV.
           </p>
-          <Link href="/#buy">
+          <Link href="/buy-credits">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

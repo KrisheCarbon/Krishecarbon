@@ -42,12 +42,11 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Technology</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Impact</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Buy Credits</a></li>
+              <li><a href="/" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
+              <li><a href="/how-it-works" className="text-gray-400 hover:text-white transition-colors">How It Works</a></li>
+              <li><a href="/technology" className="text-gray-400 hover:text-white transition-colors">Technology</a></li>
+              <li><a href="/about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="/buy-credits" className="text-gray-400 hover:text-white transition-colors">Buy Credits</a></li>
             </ul>
           </div>
           
@@ -57,15 +56,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-3 text-emerald-500" />
-                <span className="text-gray-400">hello@krishecarbon.com</span>
+                <span className="text-gray-400">krishecarbon@gmail.com</span>
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 text-emerald-500" />
-                <span className="text-gray-400">+91 9876543210</span>
+                <span className="text-gray-400">+91 7975597294</span>
               </li>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 mt-0.5 text-emerald-500" />
-                <span className="text-gray-400">Bangalore, Karnataka, India</span>
+                <span className="text-gray-400">Sector 77,Gurgaon, Haryana, India</span>
               </li>
             </ul>
           </div>

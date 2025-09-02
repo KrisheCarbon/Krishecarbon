@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Zap, Smartphone, Satellite, TestTube2 ,CheckCircle2,ArrowRight} from "lucide-react"
 
@@ -204,6 +205,7 @@ export default function Technology() {
       <p className="text-lg text-gray-600 mb-8">
         Get in touch with our technical team for a detailed overview of our MRV methodology.
       </p>
+      <Link href='/about'>
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
@@ -212,6 +214,7 @@ export default function Technology() {
         Contact Our Team
         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
       </motion.button>
+       </Link>
     </motion.div>
   </div>
 </section>
