@@ -155,7 +155,7 @@ export default function Home() {
                           >
                             
                             <span className="flex items-center gap-3">
-                              Join the Regenerative Revolution
+                              Partner With Us
                               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                             </span>
                             
