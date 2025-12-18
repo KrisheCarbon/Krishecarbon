@@ -70,6 +70,7 @@ export default function RegisterIntent() {
         state: form.state,
         moreDetails: form.moreDetails || "", // optional
         platform: "web",
+        status: "pending",
         createdAt: serverTimestamp(),
       });
 
