@@ -147,17 +147,21 @@ export default function Home() {
                           transition={{ duration: 0.8, delay: 0.8 }}
                           className="flex flex-col sm:flex-row gap-6 justify-center items-center"
                         >
+                          <Link href="/roi">
                           <motion.button
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
                             className="group relative bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white px-10 py-5 rounded-2xl font-bold text-lg transition-all duration-300 shadow-2xl shadow-emerald-500/25 hover:shadow-emerald-500/40"
                           >
+                            
                             <span className="flex items-center gap-3">
                               Join the Regenerative Revolution
                               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                             </span>
+                            
                             <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
                           </motion.button>
+                          </Link>
                           
                           <motion.button
                             whileHover={{ scale: 1.05, y: -2 }}

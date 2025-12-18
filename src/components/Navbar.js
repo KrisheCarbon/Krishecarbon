@@ -24,6 +24,7 @@ export default function Navbar() {
       <Link href="/technology">Technology</Link>
       <Link href="/about">About Us</Link>
       <Link href="/buy-credits">Buy Credits</Link>
+      <Link href="/roi">Partner With Us</Link>
       <Link href="/get-started">
         <button className="bg-green-800 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">
           Get Started
