@@ -118,24 +118,25 @@ export default function Home() {
                           className="mb-12"
                         >
                           <p className="text-xl md:text-2xl text-gray-700 mb-6 max-w-4xl mx-auto leading-relaxed font-normal">
-                            We help smallholder farmers turn agricultural waste into income through 
-                            <span className="font-semibold text-emerald-700"> traceable biochar</span> and 
-                            <span className="font-semibold text-emerald-700"> verified carbon credits</span>.
+                            We&apos;re improving soil health for smallholder farmers.
+                            <span className="font-semibold text-emerald-700"> Biochar</span> is how we do it —
+                            and <span className="font-semibold text-emerald-700"> carbon credits</span> from that
+                            biochar pay for the whole thing, so farmers benefit twice: healthier soil and carbon income.
                           </p>
                           
                           {/* Stats preview */}
                           <div className="flex flex-wrap justify-center gap-8 text-center">
                             <div className="bg-white/70 backdrop-blur-sm px-4 py-2 rounded-2xl border border-emerald-200">
-                              <div className="text-2xl font-bold text-emerald-600">500+</div>
+                              <div className="text-2xl font-bold text-emerald-600">1000+</div>
                               <div className="text-sm text-gray-600">Farmers</div>
                             </div>
                             <div className="bg-white/70 backdrop-blur-sm px-4 py-2 rounded-2xl border border-emerald-200">
-                              <div className="text-2xl font-bold text-emerald-600">300+</div>
-                              <div className="text-sm text-gray-600">Tons CO₂</div>
+                              <div className="text-2xl font-bold text-emerald-600">3000+</div>
+                              <div className="text-sm text-gray-600">Carbon Credits</div>
                             </div>
                             <div className="bg-white/70 backdrop-blur-sm px-4 py-2 rounded-2xl border border-emerald-200">
-                              <div className="text-2xl font-bold text-emerald-600">₹45L+</div>
-                              <div className="text-sm text-gray-600">Earned</div>
+                              <div className="text-2xl font-bold text-emerald-600">₹1Cr+</div>
+                              <div className="text-sm text-gray-600">To Rural Economy</div>
                             </div>
                           </div>
                         </motion.div>
@@ -155,7 +156,7 @@ export default function Home() {
                           >
                             
                             <span className="flex items-center gap-3">
-                              Partner With Us
+                              Organization
                               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
                             </span>
                             
@@ -207,11 +208,10 @@ export default function Home() {
       className="mb-12"
     >
       <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-        Smallholders convert crop waste into 
-        <span className="font-semibold text-emerald-700"> traceable biochar</span> and 
-        <span className="font-semibold text-emerald-700"> verified carbon credits</span> — delivering 
-        <span className="font-semibold text-emerald-700"> income for farmers</span> and 
-        <span className="font-semibold text-emerald-700"> trust for buyers</span>.
+        We improve <span className="font-semibold text-emerald-700"> soil health</span> for smallholder
+        farmers through <span className="font-semibold text-emerald-700"> biochar</span> —  and the
+        <span className="font-semibold text-emerald-700"> carbon credits</span> it generates pay for the
+        whole thing, so farmers benefit twice: from healthier soil and from carbon income.
       </p>
     </motion.div>
 
@@ -462,9 +462,9 @@ export default function Home() {
     {/* Cards */}
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       {[
-        { icon: "/icon_farmers.svg", title: "500+ Farmers", text: "Smallholders connected to the global carbon market." },
-        { icon: "/icon_biochar.svg", title: "150+ Tons Biochar", text: "Turning crop residue into durable carbon sinks." },
-        { icon: "/icon_money.svg", title: "₹45L+ Lakhs Earned", text: "New income streams for Rural Communities." },
+        { icon: "/icon_farmers.svg", title: "1000+ Farmers", text: "Smallholders connected to the global carbon market." },
+        { icon: "/icon_biochar.svg", title: "3000+ Carbon Credits", text: "Equal to 3,000 tons of CO₂ removed from the atmosphere." },
+        { icon: "/icon_money.svg", title: "₹1Cr+ Sent to Rural Economy", text: "New income streams for Rural Communities." },
         { icon: "/icon_zones.svg", title: "3 Pilot Zones", text: "Scale across multiple rural regions." },
         { icon: "/icon_soilsample.svg", title: "200+ Soil Samples", text: "Scientific validation of carbon storage and soil health." },
         { icon: "/icon_co2.svg", title: "20 Climapreneurs", text: "Rural youth trained to manage kilns and scale projects." },

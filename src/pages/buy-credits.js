@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function BuyCredits() {
   return (
@@ -79,12 +80,14 @@ export default function BuyCredits() {
 
     {/* Buy Credits Button */}
     <div className="text-center">
-      <button 
-        className="px-8 py-4 text-white font-merriweather text-lg rounded-lg hover:opacity-90 transition-opacity duration-300"
-        style={{ backgroundColor: '#25632D' }}
-      >
-        Buy Credits
-      </button>
+      <Link href="/roi">
+        <button
+          className="px-8 py-4 text-white font-merriweather text-lg rounded-lg hover:opacity-90 transition-opacity duration-300"
+          style={{ backgroundColor: '#25632D' }}
+        >
+          Buy Credits
+        </button>
+      </Link>
     </div>
   </div>
 </section>

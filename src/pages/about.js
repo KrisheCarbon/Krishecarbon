@@ -17,6 +17,11 @@ export default function About() {
       <p className="text-xl md:text-2xl text-[#808080] font-merriweather">
         How a simple idea became a climate movement.
       </p>
+      <p className="text-lg md:text-xl text-gray-700 font-merriweather max-w-3xl mx-auto mt-6 leading-relaxed">
+        We&apos;re improving soil health for smallholder farmers. Biochar is how we do it, and
+        the carbon credits from that biochar are what pay for the whole thing — so farmers
+        benefit twice, from healthier soil and from carbon income.
+      </p>
     </div>
 
     {/* Story Image */}

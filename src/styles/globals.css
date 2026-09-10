@@ -3,6 +3,36 @@
 /* Tailwind base */
 @import "tailwindcss";
 
+/* ---- KriSHE Carbon brand palette (from brand sheet) ---- */
+@theme {
+  --color-emerald-50: #F4FAEA;
+  --color-emerald-100: #E6F3D2;
+  --color-emerald-200: #CFE6A8;
+  --color-emerald-300: #B3D67D;
+  --color-emerald-400: #A0CD5E;
+  --color-emerald-500: #8CC63E;
+  --color-emerald-600: #6FA830;
+  --color-emerald-700: #4F7D28;
+  --color-emerald-800: #35591E;
+  --color-emerald-900: #1A3C2A;
+
+  --color-green-50: #F4FAEA;
+  --color-green-100: #E6F3D2;
+  --color-green-200: #CFE6A8;
+  --color-green-300: #B3D67D;
+  --color-green-400: #A0CD5E;
+  --color-green-500: #8CC63E;
+  --color-green-600: #6FA830;
+  --color-green-700: #4F7D28;
+  --color-green-800: #35591E;
+  --color-green-900: #1A3C2A;
+
+  --color-brand-cream: #FAF7F2;
+  --color-brand-gray: #808185;
+  --color-brand-green: #8CC63E;
+  --color-brand-dark: #1A3C2A;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,11 +48,11 @@
   --font-mono: var(--font-geist-mono); /* keep if you're using it elsewhere */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Site is designed as a single, fixed light theme — do not switch to a
+   dark palette based on the visitor's OS/browser color-scheme preference,
+   so the site looks the same in both modes. */
+:root {
+  color-scheme: light;
 }
 
 body {

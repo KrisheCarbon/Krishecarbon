@@ -8,26 +8,27 @@ export default function Navbar() {
     <div className="flex items-center gap-2">
       <Link href="/" passHref>
           <Image
-            src="/kriSHE_logo.svg"
+            src="/logo-horizontal.png"
             alt="KriSHE Carbon Logo"
-            width={100}
-            height={100}
-            className="cursor-pointer"
+            width={168}
+            height={101}
+            className="cursor-pointer h-11 w-auto"
+            priority
           />
       </Link>
     </div>
   
-    {/* Right: Nav Links + Get Started */}
+    {/* Right: Nav Links + Login */}
     <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-800 ml-auto font-merriweather">
       
       <Link href="/how-it-works">How It Works</Link>
       <Link href="/technology">Technology</Link>
       <Link href="/about">About Us</Link>
       <Link href="/buy-credits">Buy Credits</Link>
-      <Link href="/roi">Partner With Us</Link>
-      <Link href="/get-started">
-        <button className="bg-green-800 text-white px-4 py-2 rounded-md hover:bg-green-700 transition">
-          Get Started
+      <Link href="/roi">Organization</Link>
+      <Link href="/login">
+        <button className="bg-emerald-800 text-white px-4 py-2 rounded-md hover:bg-emerald-700 transition">
+          Login
         </button>
       </Link>
     </div>

@@ -165,7 +165,7 @@ export default function Impact() {
                 height={40}
               />
             </div>
-            <h3 className="text-2xl font-bold text-green-900">300+ Tons</h3>
+            <h3 className="text-2xl font-bold text-green-900">3000+ Tons</h3>
             <p className="text-[#555] font-medium">CO2 reduced</p>
           </div>
 
@@ -179,7 +179,7 @@ export default function Impact() {
                 height={40}
               />
             </div>
-            <h3 className="text-2xl font-bold text-green-900">₹45L</h3>
+            <h3 className="text-2xl font-bold text-green-900">₹1Cr+</h3>
             <p className="text-[#555] font-medium">Earnings</p>
           </div>
         </div>

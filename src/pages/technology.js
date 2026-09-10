@@ -22,7 +22,8 @@ export default function Technology() {
             Technology That Makes It Verifiable
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Traceable, transparent, and scalable solutions to verify rural carbon removals.
+            Traceable, transparent, and scalable solutions to verify rural carbon removals —
+            live in the field and running today.
           </p>
         </motion.div>
       </div>
@@ -61,7 +62,8 @@ export default function Technology() {
         <div>
           <h3 className="text-xl font-semibold text-gray-800 mb-2">Smart Kilns</h3>
           <p className="text-gray-600 leading-relaxed">
-            Track biomass in/out per burn with timestamp and quantity.
+            Real-time temperature, methane emissions, and moisture capture on every burn —
+            all the dMRV data we need, live and running today.
           </p>
         </div>
       </motion.div>
@@ -118,7 +120,8 @@ export default function Technology() {
         <div>
           <h3 className="text-xl font-semibold text-gray-800 mb-2">Soil Testing + dMRV Compliance</h3>
           <p className="text-gray-600 leading-relaxed">
-            On-field sampling + auto-generated MRV reports for carbon credit registries.
+            On-field soil sampling plus auto-generated MRV reports for carbon credit registries —
+            already operational across our pilot zones.
           </p>
         </div>
       </motion.div>
@@ -154,7 +157,7 @@ export default function Technology() {
       >
         <CheckCircle2 className="w-6 h-6 text-emerald-600 mr-4 flex-shrink-0" />
         <p className="text-lg text-gray-700">
-          Live data capture with Climapreneurs on every field
+          Live data capture with Climapreneurs on every field, running today
         </p>
       </motion.div>
 

@@ -13,18 +13,18 @@ const Footer = () => {
             <div className="flex items-center mb-6">
               <div className="bg-white p-2 rounded-xl mr-3">
                 <Image
-                        src="/kriSHE_logo.svg"
+                        src="/logo-horizontal.png"
                         alt="KriSHE Carbon Logo"
-                        href="/"
-                        width={50}
-                        height={50}
+                        width={140}
+                        height={84}
+                        className="h-10 w-auto"
                       />
               </div>
-              <h3 className="text-2xl font-bold">KriSHE Carbon</h3>
             </div>
             <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
-              Empowering Rural India. Healing the Planet. We help smallholder farmers turn 
-              agricultural waste into income through traceable biochar and verified carbon credits.
+              We&apos;re improving soil health for smallholder farmers. Biochar is how we do it,
+              and carbon credits from that biochar pay for the whole thing — so farmers benefit
+              twice, from healthier soil and from carbon income.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="bg-gray-800 p-3 rounded-xl hover:bg-gray-700 transition-colors">
@@ -78,6 +78,14 @@ const Footer = () => {
       className="text-gray-400 hover:text-white transition-colors"
     >
       Buy Credits
+    </Link>
+  </li>
+  <li>
+    <Link
+      href="/roi"
+      className="text-gray-400 hover:text-white transition-colors"
+    >
+      Organization
     </Link>
   </li>
             </ul>

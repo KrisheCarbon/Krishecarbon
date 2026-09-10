@@ -1,12 +1,12 @@
 // pages/_app.jsx
 import "@/styles/globals.css";
-import { Geist } from "next/font/google";
+import { DM_Serif_Display } from "next/font/google";
 import { Inter } from "next/font/google";
 
-const geistSans = Geist({
+const dmSerifDisplay = DM_Serif_Display({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
-  weight: ["100","200","300","400","500","600","700","800","900"], // includes Black
+  variable: "--font-dm-serif",
+  weight: ["400"],
 });
 
 const inter = Inter({
@@ -17,11 +17,11 @@ const inter = Inter({
 
 export default function App({ Component, pageProps }) {
   return (
-    <div className={`${geistSans.variable} ${inter.variable}`}>
+    <div className={`${dmSerifDisplay.variable} ${inter.variable}`}>
       {/* Global font setup */}
       <style jsx global>{`
         :root {
-          --font-heading: var(--font-geist-sans);
+          --font-heading: var(--font-dm-serif);
           --font-body: var(--font-inter);
         }
 
@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
           -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Headings default to Geist (like your screenshot) */
+        /* Headings use DM Serif Display, per the KriSHE Carbon brand sheet */
         h1, h2, h3, h4, h5, h6, strong, .font-heading {
           font-family: var(--font-heading), system-ui, sans-serif;
         }
