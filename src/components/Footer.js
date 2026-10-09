@@ -14,7 +14,7 @@ const Footer = () => {
               <div className="bg-white p-2 rounded-xl mr-3">
                 <Image
                         src="/logo-horizontal.png"
-                        alt="KriSHE Carbon Logo"
+                        alt="KriSHE Carbon"
                         width={140}
                         height={84}
                         className="h-10 w-auto"

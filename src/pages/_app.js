@@ -1,5 +1,6 @@
 // pages/_app.jsx
 import "@/styles/globals.css";
+import Head from "next/head";
 import { DM_Serif_Display } from "next/font/google";
 import { Inter } from "next/font/google";
 
@@ -15,9 +16,36 @@ const inter = Inter({
   weight: ["300","400","500","600","700"],
 });
 
+const SITE_NAME = "KriSHE Carbon";
+const SITE_DESCRIPTION =
+  "KriSHE Carbon improves soil health for smallholder farmers with biochar, funded by verified carbon credits so farmers earn twice: healthier soil and carbon income.";
+
+// Tells Google the site's name for search results.
+const siteNameJsonLd = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  url: "https://krishecarbon.com/",
+});
+
 export default function App({ Component, pageProps }) {
   return (
     <div className={`${dmSerifDisplay.variable} ${inter.variable}`}>
+      {/* Site-wide defaults; a page's own <title> overrides this one. */}
+      <Head>
+        <title>{SITE_NAME}</title>
+        <meta name="description" content={SITE_DESCRIPTION} key="description" />
+        <meta property="og:site_name" content={SITE_NAME} key="og:site_name" />
+        <meta property="og:title" content={SITE_NAME} key="og:title" />
+        <meta property="og:description" content={SITE_DESCRIPTION} key="og:description" />
+        <meta name="application-name" content={SITE_NAME} key="application-name" />
+        <script
+          type="application/ld+json"
+          key="site-name"
+          dangerouslySetInnerHTML={{ __html: siteNameJsonLd }}
+        />
+      </Head>
+
       {/* Global font setup */}
       <style jsx global>{`
         :root {

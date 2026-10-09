@@ -9,7 +9,7 @@ export default function Navbar() {
       <Link href="/" passHref>
           <Image
             src="/logo-horizontal.png"
-            alt="KriSHE Carbon Logo"
+            alt="KriSHE Carbon"
             width={168}
             height={101}
             className="cursor-pointer h-11 w-auto"
