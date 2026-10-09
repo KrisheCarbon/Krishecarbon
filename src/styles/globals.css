@@ -69,3 +69,17 @@ body {
   font-family: var(--font-merriweather);
 }
 
+
+/* Hover labels on the mixing-locations map */
+.leaflet-tooltip.mixing-tooltip {
+  background: #ffffff;
+  border: 1px solid #CFE6A8;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(26, 60, 42, 0.18);
+  padding: 8px 12px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.leaflet-tooltip-top.mixing-tooltip::before {
+  border-top-color: #ffffff;
+}
