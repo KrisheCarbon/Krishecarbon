@@ -56,8 +56,7 @@ function selectionTitle(summary) {
 function tooltipHtml(points) {
   const s = summarize(points);
   return `<div style="font-weight:700;color:#1A3C2A">${selectionTitle(s)}</div>
-    <div style="color:#4b5563">${formatNumber(s.farms)} farm${s.farms === 1 ? "" : "s"} · ${formatTonnes(s.biochar)} t biochar · ${formatTonnes(s.co2)} t CO₂</div>
-    <div style="color:#6FA830;font-size:11px;margin-top:2px">Click for details</div>`;
+    <div style="color:#4b5563">${formatNumber(s.farms)} farm${s.farms === 1 ? "" : "s"} · ${formatTonnes(s.biochar)} t biochar · ${formatTonnes(s.co2)} t CO₂</div>`;
 }
 
 function DetailsCard({ points, onClose }) {
