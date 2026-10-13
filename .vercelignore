@@ -1,0 +1,16 @@
+# What the Vercel command-line deploy must never upload.
+
+# Local settings and secrets (the example file is fine)
+.env
+.env.*
+!.env.example
+test.env
+
+# The local CMS database (it holds the admin login) and files uploaded to the local CMS
+payload.db*
+/media
+
+# Rebuilt on Vercel
+node_modules
+.next
+*.tsbuildinfo
