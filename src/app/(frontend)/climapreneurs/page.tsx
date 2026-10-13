@@ -152,7 +152,7 @@ export default function ClimapreneursPage() {
               </h2>
             </div>
             <p className="sec__sub" data-reveal>
-              Climapreneurs are the local backbone of KriSHE’s decentralised network. 20 have been trained so far.
+              Climapreneurs are the local backbone of KriSHE’s decentralised network. More than 30 have been trained so far.
             </p>
           </div>
 

@@ -7,13 +7,15 @@ type TestimonialVideoProps = {
   name: string
   // Read out for the play button, e.g. "A farmer from Gujarat speaks"
   label: string
+  // Who is speaking, shown over the still until the film starts
+  caption: string
 }
 
 /**
  * Someone speaking to camera. Only the poster loads with the page; the film is fetched when
  * play is pressed, and it then plays with its sound and the browser's own controls.
  */
-export function TestimonialVideo({ name, label }: TestimonialVideoProps) {
+export function TestimonialVideo({ name, label, caption }: TestimonialVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [started, setStarted] = useState(false)
 
@@ -42,11 +44,14 @@ export function TestimonialVideo({ name, label }: TestimonialVideoProps) {
         onPlay={quietOthers}
       />
       {!started && (
-        <button className="talk__play" type="button" onClick={play} aria-label={`Play: ${label}`}>
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M8 5.5v13l11-6.5z" />
-          </svg>
-        </button>
+        <>
+          <button className="talk__play" type="button" onClick={play} aria-label={`Play: ${label}`}>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5.5v13l11-6.5z" />
+            </svg>
+          </button>
+          <span className="talk__cap shot__cap glass glass--dark">{caption}</span>
+        </>
       )}
     </div>
   )

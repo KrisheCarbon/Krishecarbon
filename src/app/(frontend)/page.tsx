@@ -144,29 +144,46 @@ const APPROACH = [
 // `count` animates up to the number; `value` is shown as written
 const IMPACT: { count?: number; value?: string; suffix?: string; title: string; text: string }[] = [
   { count: 1000, suffix: '+', title: 'Farmers', text: 'Reached through KriSHE’s field network.' },
-  { count: 3000, suffix: '+', title: 'Carbon credits', text: '3,000 tonnes of CO₂ removed.' },
+  { count: 3000, suffix: '+', title: 'Credits issued', text: '3,000 tonnes of CO₂ removed.' },
   { value: '₹1Cr+', title: 'To the rural economy', text: 'New income for rural communities.' },
   { count: 3, title: 'Pilot zones', text: 'Across multiple rural regions.' },
   { count: 200, suffix: '+', title: 'Soil samples', text: 'Supporting research on soil carbon and soil health.' },
-  { count: 20, title: 'Climapreneurs', text: 'Trained to run kilns and lead field operations.' },
+  { count: 30, suffix: '+', title: 'Climapreneurs', text: 'Trained to run kilns and lead field operations.' },
 ]
 
-// The first three are the films KriSHE selected: people from the Gujarat project speaking to camera.
-// The second and third are the same man answering different questions, so both are kept.
-// The last two are from KriSHE's Impact Room folder, filmed on a phone and cut to the women's own words.
-// Names and roles have not been supplied, so the films carry no captions yet.
+// The first three are the films KriSHE selected, shot in Talaja (Bhavnagar). The second and third are
+// the same man answering different questions, so both are kept. The last two are from KriSHE's
+// Impact Room folder, filmed on a phone and cut to the women's own words.
+// Names as KriSHE gave them on 13 Oct 2026: Jeev Ben and Mani Ben (Anjali), Bhamar Ramubhai
+// Jitharbhai (Tanisha). Manjula Ben, her group and the village of Pasvi are as heard in the films
+// (a machine transcript of the Gujarati), which KriSHE has not corrected.
 const TESTIMONIALS = [
-  { name: 'testimonial-1', label: 'A woman from the Gujarat project speaks to camera' },
-  { name: 'testimonial-2', label: 'A man from the Gujarat project speaks to camera' },
-  { name: 'testimonial-3', label: 'The same man answers a second question' },
-  { name: 'testimonial-4', label: 'A woman farmer speaks, seated among other women of her village' },
-  { name: 'testimonial-5', label: 'An older woman farmer speaks, seated outside her home' },
+  { name: 'testimonial-1', caption: 'Jeev Ben · Uchdi, Talaja', label: 'Jeev Ben, a farmer from Uchdi village, speaks to camera' },
+  { name: 'testimonial-2', caption: 'Ramubhai · Pasvi, Talaja', label: 'Ramubhai, a farmer from Pasvi village, introduces himself' },
+  { name: 'testimonial-3', caption: 'Ramubhai · Pasvi, Talaja', label: 'Ramubhai on making biochar from his cotton waste' },
+  { name: 'testimonial-4', caption: 'Manjula Ben · Rani Mata group', label: 'Manjula Ben, president of the Rani Mata group, speaks' },
+  { name: 'testimonial-5', caption: 'Mani Ben · Rani Mata group', label: 'Mani Ben, a farmer in the Rani Mata group, speaks outside her home' },
 ]
 
+// What three of them say in the films. KriSHE asked for real names here (13 Oct 2026); these
+// replace the three quotes carried over from the old website. The first two follow Tanisha's own
+// English translations of the films, shortened; the third is ours.
 const QUOTES = [
-  { text: 'KriSHE helped increase our yields while creating extra income.', name: 'Ramesh K.', role: 'Farmer, Telangana' },
-  { text: 'Biochar improved our soil moisture and crop health.', name: 'Anita P.', role: 'Farmer, Andhra Pradesh' },
-  { text: 'Simple process. Real benefits for our community.', name: 'Mahesh V.', role: 'Climapreneur' },
+  {
+    text: 'We made biochar for the first time and applied it on our pearl millet field. We were happy with the result.',
+    name: 'Jeev Ben',
+    role: 'Farmer, Uchdi, Talaja',
+  },
+  {
+    text: 'I never thought that cotton waste could be converted into charcoal like this. We mixed it with farmyard manure and applied it on the field.',
+    name: 'Ramubhai',
+    role: 'Farmer, Pasvi, Talaja',
+  },
+  {
+    text: 'After we put it in our fields, the farming went well. This time we had sown cotton, and the cotton did well too.',
+    name: 'Manjula Ben',
+    role: 'President, Rani Mata group',
+  },
 ]
 
 export default async function HomePage() {
@@ -209,7 +226,7 @@ export default async function HomePage() {
               <dd>1000+</dd>
             </div>
             <div>
-              <dt>Carbon credits</dt>
+              <dt>Credits issued</dt>
               <dd>3000+</dd>
             </div>
             <div>
@@ -624,9 +641,9 @@ export default async function HomePage() {
 
           {/* On film, in their own words: these play with sound when pressed */}
           <ul className="talks">
-            {TESTIMONIALS.map(({ name, label }, i) => (
+            {TESTIMONIALS.map(({ name, label, caption }, i) => (
               <li key={name} data-reveal style={stagger(i % 3)}>
-                <TestimonialVideo name={name} label={label} />
+                <TestimonialVideo name={name} label={label} caption={caption} />
               </li>
             ))}
             {/* A photograph takes the sixth place in the grid */}

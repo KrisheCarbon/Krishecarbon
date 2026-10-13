@@ -1651,6 +1651,12 @@ a.glass:hover .i {
   object-fit: cover;
 }
 
+/* Small tiles: a smaller label, so it does not sit across the people */
+.fieldshot .shot__cap {
+  padding: 7px 11px;
+  font-size: 13px;
+}
+
 .tiles {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1904,6 +1910,18 @@ a.glass:hover .i {
 
 .teamshot img {
   object-fit: cover;
+}
+
+/* Who is speaking: in the top corner, clear of the play button, and gone once the film starts */
+.talk__cap {
+  top: 12px;
+  bottom: auto;
+  padding: 7px 11px;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  pointer-events: none;
 }
 
 /* The photograph that fills the last place in the grid of films */
@@ -3133,6 +3151,11 @@ textarea.input {
   .quotes {
     grid-template-columns: 1fr;
   }
+
+  /* Two films a row: three would leave each too small for its name and play button */
+  .talks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 /* The nav needs about 1000px for its five links; below that it becomes a menu button */
@@ -3201,6 +3224,16 @@ textarea.input {
   .mix,
   .joinrow {
     grid-template-columns: 1fr;
+  }
+
+  /* The wide photograph on top, the two squares side by side beneath it */
+  .fieldshots {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fieldshot--wide {
+    grid-column: 1 / -1;
+    aspect-ratio: 2 / 1;
   }
 
   /* One column: the rail has no side to sit on, and each phase carries its own label */
@@ -3272,15 +3305,6 @@ textarea.input {
   .hero__actions .btn,
   .become .btn {
     width: 100%;
-  }
-
-  .fieldshots {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .fieldshot--wide {
-    grid-column: 1 / -1;
-    aspect-ratio: 2 / 1;
   }
 
   /* On the small squares a caption would sit across the faces */
