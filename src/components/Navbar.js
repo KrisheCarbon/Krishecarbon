@@ -26,7 +26,7 @@ export default function Navbar() {
       <Link href="/about">About Us</Link>
       <Link href="/buy-credits">Buy Credits</Link>
       <Link href="/roi">Organization</Link>
-      <Link href="https://admin.krishecarbon.com">
+      <Link href="https://app.krishecarbon.com">
         <button className="bg-emerald-800 text-white px-4 py-2 rounded-md hover:bg-emerald-700 transition">
           Login
         </button>
