@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Favicon: the atom from the KriSHE logo (three interlocked rings) on the site's deep green -->
+  <rect width="64" height="64" rx="14" fill="#13231d"/>
+  <clipPath id="w">
+    <path clip-rule="evenodd" d="M-200 -200H200V200H-200Z M32.594 0A71.1 29 -60 0 0 0 -47.371A71.1 29 60 0 1 32.594 0Z M-32.594 0A71.1 29 -60 0 0 0 47.371A71.1 29 60 0 1 -32.594 0Z"/>
+  </clipPath>
+  <g transform="translate(32 32) scale(0.33)" fill="none" stroke="#82bf2d" stroke-width="9" stroke-linecap="round">
+    <g transform="rotate(90)" clip-path="url(#w)"><path d="M71.1 0A71.1 29 0 1 1-71.1 0 71.1 29 0 1 1 71.1 0"/></g>
+    <g transform="rotate(30)" clip-path="url(#w)"><path d="M71.1 0A71.1 29 0 1 1-71.1 0 71.1 29 0 1 1 71.1 0"/></g>
+    <g transform="rotate(-30)" clip-path="url(#w)"><path d="M71.1 0A71.1 29 0 1 1-71.1 0 71.1 29 0 1 1 71.1 0"/></g>
+  </g>
+</svg>
