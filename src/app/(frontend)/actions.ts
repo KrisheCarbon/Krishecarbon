@@ -1,5 +1,8 @@
 'use server'
 
+import config from '@payload-config'
+import { getPayload } from 'payload'
+
 export type EnquiryState = {
   status: 'idle' | 'sent' | 'error'
   message?: string
@@ -15,10 +18,13 @@ const ROLES = ['buyer', 'partner', 'other'] as const
 const FAILED = 'We could not send your enquiry just now. Please email us instead:'
 
 /**
- * Sends an enquiry to the team's Google Sheet. The sheet has a small Apps Script
- * attached (integrations/google-sheet/Code.gs) that receives the enquiry and adds a row.
- *   ENQUIRY_SHEET_WEBHOOK_URL  the script's web-app address
- *   ENQUIRY_SHEET_SECRET       the same secret the script was given, so nobody else can add rows
+ * Saves an enquiry in two places, so it survives either one being down:
+ *   - the website's database, where the team sees it under Enquiries in the CMS
+ *   - the team's Google Sheet, through the small Apps Script attached to it
+ *     (integrations/google-sheet/Code.gs)
+ *       ENQUIRY_SHEET_WEBHOOK_URL  the script's web-app address
+ *       ENQUIRY_SHEET_SECRET       the same secret the script was given, so nobody else can add rows
+ * The visitor is told it worked when at least one of the two kept it.
  */
 export async function submitEnquiry(_previous: EnquiryState, form: FormData): Promise<EnquiryState> {
   const text = (name: string) => String(form.get(name) ?? '').trim()
@@ -55,29 +61,73 @@ export async function submitEnquiry(_previous: EnquiryState, form: FormData): Pr
   if (enquiry.role === 'partner' && !enquiry.interest) errors.interest = 'Please choose one.'
   if (Object.keys(errors).length > 0) return { status: 'error', errors, values }
 
+  const receivedAt = new Date().toISOString()
+  const [saved, savedToSheet] = await Promise.all([saveToDatabase(enquiry), sendToSheet({ ...enquiry, receivedAt })])
+
+  if (saved && savedToSheet) await markSavedToSheet(saved)
+  if (!saved && !savedToSheet) return { status: 'error', message: FAILED, values }
+
+  return { status: 'sent' }
+}
+
+type Enquiry = {
+  role: (typeof ROLES)[number]
+  name: string
+  organisation: string
+  email: string
+  phone: string
+  interest: string
+  quantity: string
+  geography: string
+  siteVisit: boolean
+  message: string
+  page: string
+  utmSource: string
+  utmMedium: string
+  utmCampaign: string
+}
+
+/** The id of the saved enquiry, or null when the database could not be reached. */
+async function saveToDatabase(enquiry: Enquiry): Promise<number | string | null> {
+  try {
+    const payload = await getPayload({ config })
+    const doc = await payload.create({ collection: 'enquiries', data: { ...enquiry, savedToSheet: false } })
+    return doc.id
+  } catch (error) {
+    console.error('Could not save enquiry to the database:', error)
+    return null
+  }
+}
+
+async function markSavedToSheet(id: number | string) {
+  try {
+    const payload = await getPayload({ config })
+    await payload.update({ collection: 'enquiries', id, data: { savedToSheet: true } })
+  } catch (error) {
+    console.error('Enquiry reached the sheet but could not be marked as such:', error)
+  }
+}
+
+/** Whether the sheet kept the enquiry. */
+async function sendToSheet(enquiry: Enquiry & { receivedAt: string }): Promise<boolean> {
   const webhook = process.env.ENQUIRY_SHEET_WEBHOOK_URL
   if (!webhook) {
-    console.error('Enquiry received but ENQUIRY_SHEET_WEBHOOK_URL is not set, so it was not saved.')
-    return { status: 'error', message: FAILED, values }
+    console.error('ENQUIRY_SHEET_WEBHOOK_URL is not set, so the enquiry was not sent to the sheet.')
+    return false
   }
 
   try {
     const response = await fetch(webhook, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({
-        ...enquiry,
-        secret: process.env.ENQUIRY_SHEET_SECRET ?? '',
-        receivedAt: new Date().toISOString(),
-      }),
+      body: JSON.stringify({ ...enquiry, secret: process.env.ENQUIRY_SHEET_SECRET ?? '' }),
     })
     // The script answers with { ok: true } once the row is written
     const result = (await response.json()) as { ok?: boolean; error?: string }
     if (!response.ok || !result.ok) throw new Error(result.error || `Sheet answered ${response.status}`)
+    return true
   } catch (error) {
     console.error('Could not send enquiry to the sheet:', error)
-    return { status: 'error', message: FAILED, values }
+    return false
   }
-
-  return { status: 'sent' }
 }
