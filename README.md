@@ -12,7 +12,7 @@ npm run dev
 
 Open http://localhost:3000. The CMS is at http://localhost:3000/admin; the first visit asks you to create the admin login.
 
-Locally the CMS keeps its data in a file, `payload.db`, so there is nothing else to install. To start it off with the sample blog posts and the calculator's assumptions:
+Locally the CMS keeps its data in a file, `payload.db`, so there is nothing else to install. To load the starting content (the three blog posts with their cover photos, the issued-credits figure and the calculator's assumptions):
 
 ```bash
 npm run seed
@@ -55,7 +55,9 @@ npm run media
 
 ## The demo on Vercel
 
-The demo is the Vercel project `krishe-carbon` (team `strugglers`). It was deployed from this folder with Vercel's command-line tool, with no Git repository involved. To publish the current state of this folder again:
+The demo is the Vercel project `krishe-carbon` (team `strugglers`). Its database is a Neon Postgres database (`krishe-carbon-db`, free plan) and its uploaded images are in a Vercel Blob store (`krishe-carbon-media`); both were added from the project's Storage tab.
+
+It is published from this folder with Vercel's command-line tool. The Git repository is not connected to it, so pushing to Git does not publish anything. To publish the current state of this folder:
 
 ```bash
 npx vercel deploy --prod
@@ -67,7 +69,7 @@ npx vercel deploy --prod
 
 1. Put **this folder only** in the Git repository (or set the project's Root Directory to `web`). The raw shoot must not be pushed.
 2. In Vercel, import the repository. It is detected as Next.js; no build settings need changing.
-3. In the project's **Storage** tab add a **Postgres** database and a **Blob** store. Vercel sets the database address (`DATABASE_URL` or `POSTGRES_URL`; the site reads either) and `BLOB_READ_WRITE_TOKEN` for you.
+3. In the project's **Storage** tab add a **Postgres** database (the demo uses Neon) and a **Blob** store. Vercel sets the database address (`DATABASE_URL` or `POSTGRES_URL`; the site reads either) and `BLOB_READ_WRITE_TOKEN` for you.
 4. In **Settings → Environment Variables** add:
    - `PAYLOAD_SECRET`: any long random text
    - `NEXT_PUBLIC_SITE_URL`: the site's address, e.g. `https://krishe-demo.vercel.app`
@@ -86,7 +88,16 @@ A change to the files in `src/collections` or `src/globals` needs a new migratio
 DATABASE_URL=postgres://user:pass@host/db npx payload migrate:create describe-the-change
 ```
 
+Set `BLOB_READ_WRITE_TOKEN` too when you run it, as on the deployed site. The Blob plugin adds a column to the media table (`_objectkey`, created by `20261013_085556_media_object_key`); without the token the new migration would try to remove it.
+
 Commit the files it adds to `src/migrations`.
+
+## What is not in this repository
+
+- **Settings and secrets.** `.env` locally, and the environment variables on Vercel. Every setting the site reads is listed in `.env.example`.
+- **The content in the CMS.** On the demo the posts, credit figures, calculator settings and admin logins are in the Neon database, and uploaded images are in the Blob store. `npm run seed` recreates the starting content on a new database; anything edited in `/admin` since then exists only in the database it was edited in.
+- **The local CMS data.** `payload.db` and `media/` in this folder: the local database (it holds the local admin login) and its uploads.
+- **The raw footage and documents.** The original shoot and KriSHE's files are in `../media`; the copy document and client notes are in `../copy` and `../notes`.
 
 ## Moving to the client's Supabase
 
