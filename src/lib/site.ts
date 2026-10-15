@@ -13,7 +13,7 @@ export const SITE = {
   phone: { href: '+917975597294', label: '+91 79755 97294' },
   address: 'Sector 77, Gurgaon, Haryana, India',
   // The buyer and partner dashboard is a separate product
-  loginUrl: 'https://admin.krishecarbon.com',
+  loginUrl: 'https://app.krishecarbon.com',
 }
 
 export const NAV_LINKS = [
